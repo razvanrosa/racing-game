@@ -17,7 +17,6 @@ public class App {
         carReference.maxSpeed = 240.0;
 
 
-
         System.out.println(carReference.make);
         System.out.println(carReference.model);
         System.out.println(carReference.mileage);
@@ -43,6 +42,11 @@ public class App {
 
         carReference.accelerate(110,1);
         car2.accelerate(160,1);
+
+        System.out.println("Total traveled distance before repair: " + carReference.totalTraveledDistance);
+        Mechanic mechanic = new Mechanic();
+        mechanic.repair(carReference);
+        System.out.println("Total traveled distance after repair: " + carReference.totalTraveledDistance);
 
     }
 }
