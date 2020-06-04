@@ -37,13 +37,12 @@ public class App {
         System.out.println(car2.make + " " + carReference.make);
         System.out.println("First car is: " + carReference.make + " " + "Second car is :" + car2.make);
 
-        car2 = carReference;
-        System.out.println("Initial name:" + car2.make);
-        System.out.println(carReference.make);
 
         car2.make = "Audi";
         System.out.println("Updated name: " + car2.make);
 
+        carReference.accelerate(110,1);
+        car2.accelerate(160,1);
 
     }
 }
