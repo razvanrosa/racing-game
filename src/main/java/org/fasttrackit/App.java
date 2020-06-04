@@ -6,9 +6,10 @@ public class App {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the Racing Game!");
+        Game game = new Game();
+        game.start();
 
-        Car carReference = new Car();
+   /*     Car carReference = new Car();
         carReference.make = "Skoda";
         carReference.model = "Octavia";
         carReference.mileage = 7.5;
@@ -46,7 +47,7 @@ public class App {
         System.out.println("Total traveled distance before repair: " + carReference.totalTraveledDistance);
         Mechanic mechanic = new Mechanic();
         mechanic.repair(carReference);
-        System.out.println("Total traveled distance after repair: " + carReference.totalTraveledDistance);
+        System.out.println("Total traveled distance after repair: " + carReference.totalTraveledDistance);*/
 
     }
 }
