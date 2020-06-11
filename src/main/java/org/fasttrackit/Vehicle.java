@@ -2,6 +2,9 @@ package org.fasttrackit;
 
 public class Vehicle {
 
+    //class variable / static variable
+    static int totalVehicleCount;
+
     //instance variable
     String make;
     String model;
@@ -12,7 +15,11 @@ public class Vehicle {
     double totalTraveledDistance;
     boolean damaged;
 
-    public double accelerate(double speed,double durationInHours){
+    public Vehicle() {
+        totalVehicleCount ++;
+    }
+
+    public double accelerate(double speed, double durationInHours){
         if (speed > maxSpeed){
             System.out.println("Max speed exceeded");
             return 0;
