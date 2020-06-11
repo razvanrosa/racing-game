@@ -11,21 +11,21 @@ public class App {
         game.start();
 
         Vehicle vehicle1 = new Vehicle();
-        vehicle1.totalVehicleCount = 1;
+        vehicle1.setTotalVehicleCount(1);
 
         Vehicle vehicle2  = new Vehicle();
-        vehicle2.totalVehicleCount = 4;
+        vehicle2.setTotalVehicleCount(4);
 
-        System.out.println("Total count from vehicle1: " + vehicle1.totalVehicleCount);
-        System.out.println("Total count from vehicle2: " + vehicle2.totalVehicleCount);
-        System.out.println("Total count from vehicle class: "  + Vehicle.totalVehicleCount);
+        System.out.println("Total count from vehicle1: " + vehicle1.getTotalVehicleCount());
+        System.out.println("Total count from vehicle2: " + vehicle2.getTotalVehicleCount());
+        System.out.println("Total count from vehicle class: "  + Vehicle.getTotalVehicleCount());
 
         Engine engine = new Engine();
         engine.manufacturer = "Renault";
 
         Car car = new Car(engine);
-        car.make = "Dacia";
-        System.out.println(car.make);
+        car.setMake("Dacia");
+        System.out.println(car.getMake());
 
    /*     Car carReference = new Car();
         carReference.make = "Skoda";
