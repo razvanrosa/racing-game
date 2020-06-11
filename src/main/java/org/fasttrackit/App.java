@@ -1,5 +1,6 @@
 package org.fasttrackit;
 
+import org.fasttrackit.cheater.CheatingVehicle;
 import org.w3c.dom.ls.LSOutput;
 
 public class App {
