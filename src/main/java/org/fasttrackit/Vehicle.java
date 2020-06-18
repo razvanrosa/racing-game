@@ -69,6 +69,20 @@ public class Vehicle {
         return totalVehicleCount;
     }
 
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", mileage=" + mileage +
+                ", fuelLevel=" + fuelLevel +
+                ", maxSpeed=" + maxSpeed +
+                ", totalTraveledDistance=" + totalTraveledDistance +
+                ", damaged=" + damaged +
+                '}';
+    }
+
     public String getMake() {
         return make;
     }

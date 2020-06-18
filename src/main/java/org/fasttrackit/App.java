@@ -27,6 +27,7 @@ public class App {
         car.setMake("Dacia");
         System.out.println(car.getMake());
 
+
    /*     Car carReference = new Car();
         carReference.make = "Skoda";
         carReference.model = "Octavia";
