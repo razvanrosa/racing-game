@@ -19,7 +19,7 @@ public class CheatingVehicle extends Vehicle {
     // co-variant return type
     // overriding method can be more permissive
     @Override
-    protected CheatingVehicle reset() {
+    public CheatingVehicle reset() {
         super.reset();
         return this;
     }

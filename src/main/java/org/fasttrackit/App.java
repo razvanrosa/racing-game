@@ -10,7 +10,30 @@ public class App {
         Game game = new Game();
         game.start();
 
-        Vehicle vehicle1 = new Vehicle();
+    /*    //polymorphism
+        CheatingVehicle vehicle = new CheatingVehicle();
+        vehicle.setMake("Cheating vehicle");
+
+        //object type determines method implementation
+        vehicle.accelerate(60,1);
+
+        System.out.println("Accelerate with 1 param");
+        vehicle.accelerate(60);
+
+        //variable type determines what methods can be invoke
+         vehicle.cheat();
+
+         //type casting
+        if (vehicle instanceof CheatingVehicle){
+
+        }
+        ((CheatingVehicle) vehicle).cheat();
+
+        CheatingVehicle cheatingVehicle = new CheatingVehicle();
+        CheatingVehicle resetResult = cheatingVehicle.reset();
+        resetResult.cheat();*/
+
+/*        Vehicle vehicle1 = new Vehicle();
         vehicle1.setTotalVehicleCount(1);
 
         Vehicle vehicle2  = new Vehicle();
@@ -25,7 +48,7 @@ public class App {
 
         Car car = new Car(engine);
         car.setMake("Dacia");
-        System.out.println(car.getMake());
+        System.out.println(car.getMake());*
 
 
    /*     Car carReference = new Car();
