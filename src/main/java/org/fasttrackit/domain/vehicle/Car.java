@@ -1,4 +1,5 @@
-package org.fasttrackit;
+package org.fasttrackit.domain.vehicle;
+
 //is a relationship (inheritance)
 public class Car extends AutoVehicle{
 
