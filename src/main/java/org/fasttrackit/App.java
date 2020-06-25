@@ -2,16 +2,23 @@ package org.fasttrackit;
 
 import org.fasttrackit.service.Game;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class App {
 
     public static void main(String[] args) {
 
-        Game game = new Game();
-        game.start();
+        //Game game = new Game();
+        //game.start();
+
+ /*       Map< String,String> descriptionTranslation = new HashMap<>();
+        descriptionTranslation.put("en","Some description");
+        descriptionTranslation.put("ro","O descriere");
+
+        System.out.println(descriptionTranslation.size());
+
+        for (Map.Entry<String,String> entry : descriptionTranslation.entrySet());
+        System.out.println(entry.getKey() + ": " + entry.getValue());*/
 
     /*    Set<String> cities = new HashSet<>();
         cities.add("Cluj-Napoca");
