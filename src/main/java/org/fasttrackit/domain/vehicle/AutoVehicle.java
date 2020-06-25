@@ -1,6 +1,6 @@
 package org.fasttrackit.domain.vehicle;
 
-public class AutoVehicle extends Vehicle{
+public abstract class AutoVehicle extends Vehicle{
 
     //has-a relationship(Aggregation)
     private Engine engine;

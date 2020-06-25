@@ -11,7 +11,7 @@ public class App {
         //Game game = new Game();
         //game.start();
 
- /*       Map< String,String> descriptionTranslation = new HashMap<>();
+      /* Map< String,String> descriptionTranslation = new HashMap<>();
         descriptionTranslation.put("en","Some description");
         descriptionTranslation.put("ro","O descriere");
 
