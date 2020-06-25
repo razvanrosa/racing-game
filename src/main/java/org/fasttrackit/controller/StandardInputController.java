@@ -21,4 +21,10 @@ public class StandardInputController {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
+
+    public double getAccelerationSpeedFromUser(){
+        System.out.println("Please enter acceleration speed: ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextDouble();
+    }
 }

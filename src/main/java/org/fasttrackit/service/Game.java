@@ -21,29 +21,16 @@ public class Game {
         System.out.println("Welcome to the Racing Game!");
 
         initializeTracks();
+        displayTracks();
 
         Track selectedTrack = getSelectedTrack();
         System.out.println("You have selected: " + selectedTrack.getName());
 
         initializeCompetitors();
 
-    }
+        playOneRound();
 
-    private void initializeCompetitors(){
-        int playerCount =controller.getPlayerCountFromUser();
 
-        for(int i = 1; i<= playerCount; i++){
-            System.out.println("Preparing player " + i + " For the race.. ");
-
-            Vehicle vehicle = new Vehicle();
-            vehicle.setMake("T");
-            vehicle.setFuelLevel(30);
-            vehicle.setMaxSpeed(300);
-            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(9,15));
-
-            competitors.add(vehicle);
-
-        }
     }
 
     private Track getSelectedTrack(){
@@ -74,6 +61,35 @@ public class Game {
                 System.out.println(i + 1 + ". " + tracks[i].getName() + " : " + tracks[i].getLength());
             }
 
+        }
+    }
+
+    private void initializeCompetitors(){
+        int playerCount =controller.getPlayerCountFromUser();
+
+        for(int i = 1; i<= playerCount; i++){
+            System.out.println("Preparing player " + i + " For the race.. ");
+
+            Vehicle vehicle = new Vehicle();
+            vehicle.setMake("T");
+            vehicle.setFuelLevel(30);
+            vehicle.setMaxSpeed(300);
+            vehicle.setMileage(ThreadLocalRandom.current().nextDouble(9,15));
+
+            competitors.add(vehicle);
+
+        }
+    }
+
+    private void playOneRound(){
+
+        //enhanced for(for-each)
+
+        System.out.println("New round");
+        for(Vehicle competitor : competitors){
+            double speed = controller.getAccelerationSpeedFromUser();
+
+            competitor.accelerate(speed);
         }
     }
 }
