@@ -9,4 +9,10 @@ public class StandardInputController {
         Scanner input = new Scanner(System.in);
         return input.nextInt();
     }
+
+    public int getTrackNumberFromUser() {
+        System.out.println("Please select track: ");
+        Scanner input = new Scanner(System.in);
+        return input.nextInt();
+    }
 }
