@@ -2,12 +2,34 @@ package org.fasttrackit;
 
 import org.fasttrackit.service.Game;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 public class App {
 
     public static void main(String[] args) {
 
         Game game = new Game();
         game.start();
+
+    /*    Set<String> cities = new HashSet<>();
+        cities.add("Cluj-Napoca");
+        cities.add("Oradea");
+        cities.add("London");
+        cities.add("London");
+
+        System.out.println("Number of unique cities: " + cities.size());
+
+        Iterator<String> citiesIterator = cities.iterator();
+
+        while (citiesIterator.hasNext()){
+            System.out.println(citiesIterator.next());
+        }
+
+        do{
+            System.out.println(citiesIterator.next());
+        }while(citiesIterator.hasNext());*/
 
     /*    //polymorphism
         CheatingVehicle vehicle = new CheatingVehicle();

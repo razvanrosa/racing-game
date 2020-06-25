@@ -27,6 +27,7 @@ public class Game {
         System.out.println("You have selected: " + selectedTrack.getName());
 
         initializeCompetitors();
+        controller.getVehicleMakeFromUser();
 
         playOneRound();
 
