@@ -18,29 +18,29 @@ public abstract class Vehicle implements Mobile {
     private boolean damaged;
 
     public Vehicle() {
-        totalVehicleCount ++;
+        totalVehicleCount++;
     }
 
     //method overloading
-    public double accelerate(double speed){
-        return accelerate(speed,1);
+    public double accelerate(double speed) {
+        return accelerate(speed, 1);
     }
 
 
-    public double accelerate(double speed, double durationInHours){
-        if (speed > maxSpeed){
+    public double accelerate(double speed, double durationInHours) {
+        if (speed > maxSpeed) {
             System.out.println("Max speed exceeded");
             return 0;
-        }else if(speed == maxSpeed){
+        } else if (speed == maxSpeed) {
             System.out.println("Careful!Max speed reached!");
-        }else{
+        } else {
             System.out.println("Valid speed entered.");
         }
         if (canMove())
-        if(damaged){
-            System.out.println("The vehicle is damaged.You cannot accelerate!");
-            return 0;
-        }
+            if (damaged) {
+                System.out.println("The vehicle is damaged.You cannot accelerate!");
+                return 0;
+            }
 
         System.out.println(make + " is accelerating " + speed + " km/h " + durationInHours + " h");
         double distance = speed * durationInHours;
@@ -51,7 +51,7 @@ public abstract class Vehicle implements Mobile {
 
         //use more fuel if speed > 120 km/h
         double mileageMultiplier = 1;
-        if (speed > 120){
+        if (speed > 120) {
             mileageMultiplier = speed / 100;
         }
 
@@ -63,7 +63,7 @@ public abstract class Vehicle implements Mobile {
         return distance;
     }
 
-    public void makeSound(){
+    public void makeSound() {
         System.out.println("Make Way!!!!");
     }
 
@@ -86,11 +86,11 @@ public abstract class Vehicle implements Mobile {
                 '}';
     }
 
-    protected Vehicle reset(){
-         totalTraveledDistance = 0;
-         fuelLevel = 0;
-         damaged = false;
-         return this;
+    protected Vehicle reset() {
+        totalTraveledDistance = 0;
+        fuelLevel = 0;
+        damaged = false;
+        return this;
     }
 
     public String getMake() {

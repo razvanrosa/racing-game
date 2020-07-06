@@ -12,7 +12,7 @@ public class CheatingVehicle extends Vehicle {
         System.out.println(getMake() + " is accelerating " + speed + " km/h " + durationInHours + " h");
         System.out.println("Cheating...");
         double distance = speed * durationInHours * 2;
-        totalTraveledDistance +=distance;
+        totalTraveledDistance += distance;
         return distance;
     }
 
@@ -24,7 +24,7 @@ public class CheatingVehicle extends Vehicle {
         return this;
     }
 
-    public void cheat(){
+    public void cheat() {
         totalTraveledDistance *= 2;
     }
 }

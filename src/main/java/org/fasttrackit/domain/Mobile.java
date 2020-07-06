@@ -2,10 +2,13 @@ package org.fasttrackit.domain;
 
 public interface Mobile {
 
-    double accelerate(double speed,double durationInHours);
+    double accelerate(double speed, double durationInHours);
+
     String getName();
+
     boolean canMove();
+
     double getTotalTraveledDistance();
 
-    void accelerate(double speed);
+    double accelerate(double speed);
 }

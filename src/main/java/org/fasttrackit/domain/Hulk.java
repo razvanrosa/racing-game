@@ -2,14 +2,14 @@ package org.fasttrackit.domain;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Hulk implements Mobile{
+public class Hulk implements Mobile {
 
     private double totalTraveledDistance;
-    private int rendomizer = ThreadLocalRandom.current().nextInt(1,101);
+    private int rendomizer = ThreadLocalRandom.current().nextInt(1, 101);
 
     @Override
     public double accelerate(double speed, double durationInHours) {
-        if (!canMove()){
+        if (!canMove()) {
             System.out.println("I won't help you..");
             return 0;
         }
@@ -27,11 +27,16 @@ public class Hulk implements Mobile{
 
     @Override
     public boolean canMove() {
-        return rendomizer <=20;
+        return rendomizer <= 20;
     }
 
     @Override
     public double getTotalTraveledDistance() {
         return 0;
+    }
+
+    @Override
+    public double accelerate(double speed) {
+        return accelerate(100);
     }
 }
