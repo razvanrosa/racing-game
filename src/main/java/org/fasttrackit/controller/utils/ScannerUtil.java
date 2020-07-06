@@ -13,8 +13,10 @@ public class ScannerUtil {
     }
 
     public static double readNexSingleDouble() {
-        double value = SCANNER.nextInt();
-        SCANNER.nextLine();
-        return value;
+        try {
+            return SCANNER.nextDouble();
+        } finally {
+            SCANNER.nextLine();
+        }
     }
 }
