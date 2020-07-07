@@ -2,6 +2,7 @@ package org.fasttrackit.service;
 
 import org.fasttrackit.controller.StandardInputController;
 import org.fasttrackit.domain.Mobile;
+import org.fasttrackit.domain.MobileComparator;
 import org.fasttrackit.domain.Track;
 import org.fasttrackit.domain.vehicle.Car;
 import org.fasttrackit.domain.vehicle.Vehicle;
@@ -43,6 +44,18 @@ public class Game {
             System.out.println("GAME OVER!!! There's no winner.");
         }
 
+        processRankingTable();
+
+    }
+
+    private void processRankingTable(){
+        competitors.sort(Collections.reverseOrder(new MobileComparator()));
+
+        System.out.println("Rankings: ");
+
+        for (int i = 0; i < competitors.size(); i++){
+            System.out.println((i + 1) + ". " + competitors.get(i).getName() + ": " + competitors.get(i).getTotalTraveledDistance());
+        }
     }
 
     private Track getSelectedTrack() throws InvalidOptionSelectedException {
