@@ -39,6 +39,10 @@ public class Game {
             playOneRound();
         }
 
+        if (winnerNotKnow){
+            System.out.println("GAME OVER!!! There's no winner.");
+        }
+
     }
 
     private Track getSelectedTrack() throws InvalidOptionSelectedException {
@@ -99,13 +103,16 @@ public class Game {
 
         //enhanced for(for-each)
 
+        System.out.println();
         System.out.println("New round");
+        System.out.println();
         for (Mobile competitor : competitors) {
             if (!competitor.canMove()){
                 outOfRaceCompetitors.add(competitor);
                 continue;
             }
 
+            System.out.println();
             double speed = controller.getAccelerationSpeedFromUser();
 
             competitor.accelerate(speed, 1);
