@@ -2,6 +2,8 @@ package org.fasttrackit.domain.vehicle;
 
 import org.fasttrackit.domain.Mobile;
 
+import java.util.Objects;
+
 public abstract class Vehicle implements Mobile {
 
     //class variable / static variable
@@ -84,6 +86,26 @@ public abstract class Vehicle implements Mobile {
                 ", totalTraveledDistance=" + totalTraveledDistance +
                 ", damaged=" + damaged +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return Double.compare(vehicle.mileage, mileage) == 0 &&
+                Double.compare(vehicle.fuelLevel, fuelLevel) == 0 &&
+                Double.compare(vehicle.maxSpeed, maxSpeed) == 0 &&
+                Double.compare(vehicle.totalTraveledDistance, totalTraveledDistance) == 0 &&
+                damaged == vehicle.damaged &&
+                Objects.equals(make, vehicle.make) &&
+                Objects.equals(model, vehicle.model) &&
+                Objects.equals(color, vehicle.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(make, model, color, mileage, fuelLevel, maxSpeed, totalTraveledDistance, damaged);
     }
 
     protected Vehicle reset() {
