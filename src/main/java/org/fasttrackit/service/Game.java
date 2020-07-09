@@ -7,6 +7,8 @@ import org.fasttrackit.domain.Track;
 import org.fasttrackit.domain.vehicle.Car;
 import org.fasttrackit.domain.vehicle.Vehicle;
 import org.fasttrackit.exception.InvalidOptionSelectedException;
+import org.fasttrackit.persistance.FileRankingRepository;
+import org.fasttrackit.persistance.RankingRepository;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -22,6 +24,8 @@ public class Game {
     private boolean winnerNotKnow = true;
 
     private StandardInputController controller = new StandardInputController();
+
+    private RankingRepository rankingRepository = new FileRankingRepository();
 
     public void start() throws InvalidOptionSelectedException {
 
@@ -53,9 +57,16 @@ public class Game {
 
         System.out.println("Rankings: ");
 
-        for (int i = 0; i < competitors.size(); i++){
-            System.out.println((i + 1) + ". " + competitors.get(i).getName() + ": " + competitors.get(i).getTotalTraveledDistance());
+        try {
+            for (int i = 0; i < competitors.size(); i++) {
+                System.out.println((i + 1) + ". " + competitors.get(i).getName() + ": " + competitors.get(i).getTotalTraveledDistance());
+
+                rankingRepository.addRankingItem(i + 1, competitors.get(i).getName(), competitors.get(i).getTotalTraveledDistance());
+            }
+        }finally {
+            rankingRepository.close();
         }
+
     }
 
     private Track getSelectedTrack() throws InvalidOptionSelectedException {
