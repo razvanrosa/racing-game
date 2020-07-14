@@ -16,6 +16,15 @@ public class StandardInputController {
         return ScannerUtil.readNexSingleInt();
     }
 
+    public int getCompetitorTypeFromUser() {
+        try {
+            return ScannerUtil.readNexSingleInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Wrong value. Try again.");
+            return getCompetitorTypeFromUser();
+        }
+    }
+
     public String getVehicleMakeFromUser() {
         System.out.println("Please enter vehicle make: ");
         return ScannerUtil.SCANNER.nextLine();

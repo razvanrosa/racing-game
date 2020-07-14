@@ -15,7 +15,7 @@ public class FileRankingRepository implements RankingRepository{
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(filePath));
         } catch(IOException e){
-            throw new RuntimeException("Faild to create ranking file");
+            throw new RuntimeException("Failed to create ranking file");
         }
     }
 
@@ -33,7 +33,11 @@ public class FileRankingRepository implements RankingRepository{
 
     @Override
     public void close() {
-
-
+        try{
+            bufferedWriter.flush();
+            bufferedWriter.close();
+        }catch (IOException e){
+            throw new RuntimeException("Filed to save rankings file");
+        }
     }
 }
